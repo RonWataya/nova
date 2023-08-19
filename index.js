@@ -1,9 +1,11 @@
+require('dotenv').config();
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const sgMail = require('@sendgrid/mail');
-require('dotenv').config();
 const sendgridApiKey = process.env.SENDGRID_API_KEY;
+const sgMail = require('@sendgrid/mail');
+
+
 
 // parse requests of content-type - application/json
 app.use(express.json());
@@ -326,4 +328,5 @@ app.post('/booking', (req, res) => {
 const PORT = 2023;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}.`);
+    console.log(process.env.SENDGRID_API_KEY)
 });

@@ -1,10 +1,9 @@
-require('dotenv').config();
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const sendgridApiKey = process.env.SENDGRID_API_KEY;
 const sgMail = require('@sendgrid/mail');
-
+require('dotenv').config();
+const sendgridApiKey = process.env.SENDGRID_API_KEY;
 
 
 // parse requests of content-type - application/json

@@ -321,7 +321,7 @@ app.post('/booking', (req, res) => {
         });
 });
 // set port, listen for requests
-const PORT = 1010;
+const PORT = 2023;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}.`);
 });

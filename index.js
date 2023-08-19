@@ -2,6 +2,8 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const sgMail = require('@sendgrid/mail');
+require('dotenv').config();
+const sendgridApiKey = process.env.SENDGRID_API_KEY;
 
 // parse requests of content-type - application/json
 app.use(express.json());
@@ -22,7 +24,7 @@ app.use(cors({
 }));
 
 // Set the SendGrid API key
-sgMail.setApiKey('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');
+sgMail.setApiKey(sendgridApiKey);
 
 // Define a route for receiving and sending mail data for biltmore
 
@@ -294,7 +296,7 @@ app.post('/booking', (req, res) => {
     const msg = {
 
         to: ['kzimmer@novareevents.com', 'ronnexwataya@yahoo.com'],
-        from: 'web@novareevents.com',
+        from: 'info@miwalletmw.com',
         subject: 'Event Registration',
         text: 'Event registration details',
         html: `
